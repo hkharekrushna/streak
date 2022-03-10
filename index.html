@@ -9,6 +9,8 @@
       <link rel="stylesheet" media="screen" href="https://assets.scaler.com/packs/css/frontend/styles.3c3cdf.css">
       <link rel="stylesheet" media="screen" href="https://assets.scaler.com/packs/css/frontend/mentee~front~fdeb1a77.318340.css">
 
+      
+
       <style type="text/css">#ct-container {
          position: fixed;
          width: 100%;
@@ -806,8 +808,11 @@
          }
          }
       </style>
+      
+      
    </head>
    <body>
+      
       <div class="react-root react-root--auto">
          <div class="popover streak-popover" data-sr-override="true" style="top: 57.1875px; left: 100px; opacity: 1;">
             <div class="streak-popup" data-role="streak-popup">
@@ -848,7 +853,17 @@
                         <div class="streak-daily-goal__header">
                            <h4 class="streak-daily-goal__header--title">Daily Goal</h4>
                            <div>
-                              <h5 class="streak-daily-goal__header--timer">00:00:00</h5>
+                              <h5 class="streak-daily-goal__header--timer">
+                                  11/03/2022-10PM
+                                  
+                                <div id="clockdiv">
+                                    <span id="hkmhours"></span>:
+                                    <span id="hkmminutes"></span>:
+                                    <span id="hkmseconds"></span>
+                                </div>
+
+                              </h5>
+                              
                               <div class="streak-daily-goal__header--timezone">(GMT +05:30)</div>
                            </div>
                         </div>
@@ -859,141 +874,49 @@
                         <div class="streak-daily-goal__container">
                            <div class="streak-daily-goal__text"><span class="streak-daily-goal__text--achieved">0</span><span class="streak-daily-goal__text--target">/10</span></div>
                            <div class="streak-daily-goal__subtitle">Points</div>
-                           <a href="/academy/mentee-dashboard/problems" class="streak-daily-goal__button">Achieve Points</a>
+                           <a  class="streak-daily-goal__button">Achieve Points</a>
                         </div>
                      </div>
                   </div>
-                  <div class="streak-performance-graph">
-                     <h4>Your Performance</h4>
-                     <div class="streak-performance-graph__container">
-                        <div class="recharts-wrapper" style="position: relative; cursor: default; width: 470px; height: 160px;">
-                           <svg class="recharts-surface" width="470" height="160" viewBox="0 0 470 160" version="1.1">
-                              <defs>
-                                 <clipPath id="recharts3-clip">
-                                    <rect x="40" y="36" height="94" width="430"></rect>
-                                 </clipPath>
-                              </defs>
-                              <g class="recharts-cartesian-grid">
-                                 <g class="recharts-cartesian-grid-horizontal">
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="130" x2="470" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="83" x2="470" y2="83"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="36" x2="470" y2="36"></line>
-                                 </g>
-                                 <g class="recharts-cartesian-grid-vertical">
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="70" y1="36" x2="70" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="136.66666666666669" y1="36" x2="136.66666666666669" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="203.33333333333334" y1="36" x2="203.33333333333334" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="270" y1="36" x2="270" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="336.6666666666667" y1="36" x2="336.6666666666667" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="403.33333333333337" y1="36" x2="403.33333333333337" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="470" y1="36" x2="470" y2="130"></line>
-                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="36" x2="40" y2="130"></line>
-                                 </g>
-                              </g>
-                              <g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis">
-                                 <line class="recharts-cartesian-axis-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="40" y1="130" x2="470" y2="130"></line>
-                                 <g class="recharts-cartesian-axis-ticks">
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="70" y1="140" x2="70" y2="130"></line>
-                                       <g transform="translate(70,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Thu</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="136.66666666666669" y1="140" x2="136.66666666666669" y2="130"></line>
-                                       <g transform="translate(136.66666666666669,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Fri</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="203.33333333333334" y1="140" x2="203.33333333333334" y2="130"></line>
-                                       <g transform="translate(203.33333333333334,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Sat</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="270" y1="140" x2="270" y2="130"></line>
-                                       <g transform="translate(270,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Sun</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="336.6666666666667" y1="140" x2="336.6666666666667" y2="130"></line>
-                                       <g transform="translate(336.6666666666667,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Mon</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="403.33333333333337" y1="140" x2="403.33333333333337" y2="130"></line>
-                                       <g transform="translate(403.33333333333337,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Tue</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="470" y1="140" x2="470" y2="130"></line>
-                                       <g transform="translate(455.1484375,142)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Wed</text>
-                                       </g>
-                                    </g>
-                                 </g>
-                              </g>
-                              <g class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis">
-                                 <line class="recharts-cartesian-axis-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="40" y1="36" x2="40" y2="130"></line>
-                                 <g class="recharts-cartesian-axis-ticks">
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="130" x2="40" y2="130"></line>
-                                       <g transform="translate(32,130)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">0</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="83" x2="40" y2="83"></line>
-                                       <g transform="translate(32,83)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">170</text>
-                                       </g>
-                                    </g>
-                                    <g class="recharts-layer recharts-cartesian-axis-tick">
-                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="36" x2="40" y2="36"></line>
-                                       <g transform="translate(32,36)">
-                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">340</text>
-                                       </g>
-                                    </g>
-                                 </g>
-                              </g>
-                              <g class="recharts-layer recharts-line">
-                                 <path stroke="#7533ff" stroke-width="3" fill="none" width="430" height="94" stroke-dasharray="430.32916259765625px 0px" class="recharts-curve recharts-line-curve" d="M70,74.70588235294117L136.66666666666669,67.79411764705883L203.33333333333334,74.70588235294117L270,47.05882352941177L336.6666666666667,74.70588235294117L403.33333333333337,60.882352941176464L470,40.147058823529406"></path>
-                              </g>
-                              <g class="recharts-layer recharts-line">
-                                 <path stroke="#ffbf1d" stroke-width="2" fill="none" width="430" height="94" stroke-dasharray="400px 0px" class="recharts-curve recharts-line-curve" d="M70,74.70588235294117L136.66666666666669,74.70588235294117L203.33333333333334,74.70588235294117L270,74.70588235294117L336.6666666666667,74.70588235294117L403.33333333333337,74.70588235294117L470,74.70588235294117"></path>
-                              </g>
-                           </svg>
-                           <div class="recharts-legend-wrapper" style="position: absolute; width: 490px; height: 36px; right: 0px; top: 0px;">
-                              <ul class="recharts-default-legend" style="padding: 0px; margin: 0px; text-align: right;">
-                                 <li class="recharts-legend-item legend-item-0" style="display: inline-block; margin-right: 10px;">
-                                    <svg class="recharts-surface" width="8" height="8" viewBox="0 0 32 32" version="1.1" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
-                                       <path fill="#7533ff" class="recharts-symbols" transform="translate(16, 16)" d="M16,0A16,16,0,1,1,-16,0A16,16,0,1,1,16,0"></path>
-                                    </svg>
-                                    <span class="recharts-legend-item-text"><span class="streak-performance-graph__legend--text">Achieved Goal</span></span>
-                                 </li>
-                                 <li class="recharts-legend-item legend-item-1" style="display: inline-block; margin-right: 10px;">
-                                    <svg class="recharts-surface" width="8" height="8" viewBox="0 0 32 32" version="1.1" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
-                                       <path fill="#ffbf1d" class="recharts-symbols" transform="translate(16, 16)" d="M16,0A16,16,0,1,1,-16,0A16,16,0,1,1,16,0"></path>
-                                    </svg>
-                                    <span class="recharts-legend-item-text"><span class="streak-performance-graph__legend--text">Daily Goal</span></span>
-                                 </li>
-                              </ul>
-                           </div>
-                           <div class="recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-bottom" style="pointer-events: none; visibility: hidden; position: absolute; top: 0px; transform: translate(213.333px, 71px);">
-                              <div class="streak-performance-graph__tooltip"><span class="streak-performance-graph__tooltip-header">Sat</span></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
                <div class="streak-footer streak-footer--success">Your streak may increase after timer ends</div>
             </div>
          </div>
       </div>
-      <span id="recharts_measurement_span" style="position: absolute; top: -20000px; left: 0px; padding: 0px; margin: 0px; border: none; white-space: pre;">Thu</span>
+      <script>
+        function getTimeRemaining(endtime) {
+            const total = Date.parse(endtime) - Date.parse(new Date());
+            const seconds = Math.floor((total / 1000) % 60);
+            const minutes = Math.floor((total / 1000 / 60) % 60);
+            const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+            const days = Math.floor(total / (1000 * 60 * 60 * 24));
+  
+            return {total,days,hours,minutes,seconds};
+        }
+
+        function initializeClock(id, endtime) {
+        const clock = document.getElementById(id);
+        const hoursSpan = document.getElementById("hkmhours");
+        const minutesSpan = document.getElementById("hkmminutes");
+        const secondsSpan = document.getElementById("hkmseconds");
+
+        function updateClock() {
+            const t = getTimeRemaining(endtime);
+
+            hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+            minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+            secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+
+            if (t.total <= 0) {
+            clearInterval(timeinterval);
+            }
+        }
+
+        updateClock();
+        const timeinterval = setInterval(updateClock, 1000);
+        }
+
+        const deadline = 'March 11 2022 22:00:00 GMT+0530';
+        initializeClock('clockdiv', deadline);
+      </script>
    </body>
 </html>
