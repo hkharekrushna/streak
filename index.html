@@ -1,0 +1,999 @@
+<html lang="en" class=" cannot-touch">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+      <title>Subhra</title>
+      <link rel="icon" type="image/x-icon" href="https://assets.scaler.com/assets/scaler/favicon-b652dfb99111a74c5432b44897a3a277c89f7385c3c0e945e3afcf76ce22971b.ico.gz">
+      <link rel="stylesheet" media="all" href="https://assets.scaler.com/assets/master/products/scaler/components/dashboard_react-37dcc9267479d4b0e47089e62fc2d2605ad5d26f33450283a36179d473228601.css.gz">
+      <link rel="stylesheet" media="screen" href="https://assets.scaler.com/packs/css/frontend/styles.3c3cdf.css">
+      <link rel="stylesheet" media="screen" href="https://assets.scaler.com/packs/css/frontend/mentee~front~fdeb1a77.318340.css">
+
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css"></style>
+      <style type="text/css">.circle_reactGradientProgress__1_0UG {
+         display: inline-block;
+         border-radius: 100%;
+         position: relative;
+         }
+         .circle_reactGradientProgressPercentage__3mR2b {
+         position: absolute;
+         height:100%;
+         width: 100%;
+         margin: 0px auto;
+         }
+         .circle_reactGradientProgressPercentageSpan__1HdhL {
+         position: absolute;
+         height:100%;
+         width: 100%;
+         display: flex;
+         justify-content: center;
+         align-content: center;
+         flex-direction: column;
+         text-align: center;
+         }
+         .circle_progressCircleBar__1IKUZ {
+         transform: rotate(-90deg);
+         transform-origin: 50% 50%;
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+      <style type="text/css">#ct-container {
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         top: 0px;
+         left: 0px;
+         z-index: 2000;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+         pointer-events: none;
+         }
+         .ct-row {
+         display: flex;
+         justify-content: space-between;
+         }
+         .ct-group {
+         flex: 1;
+         margin: 10px 20px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         }
+         .ct-group:first-child {
+         align-items: flex-start;
+         }
+         .ct-group:last-child {
+         align-items: flex-end;
+         }
+         .ct-flex-bottom {
+         justify-content: flex-end;
+         }
+         .ct-toast {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         padding: 12px 20px;
+         background-color: #fff;
+         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+         color: #000;
+         border-radius: 4px;
+         margin: 0px;
+         opacity: 1;
+         transition: 0.3s all ease-in-out;
+         min-height: 45px;
+         pointer-events: all;
+         }
+         .ct-toast:focus {
+         outline: none;
+         }
+         .ct-toast svg {
+         min-width: 18px;
+         }
+         .ct-cursor-pointer {
+         cursor: pointer;
+         }
+         .ct-icon-loading {
+         display: inline-block;
+         width: 20px;
+         height: 20px;
+         }
+         .ct-icon-loading:after {
+         content: ' ';
+         display: block;
+         width: 14px;
+         height: 14px;
+         margin: 1px;
+         border-radius: 50%;
+         border: 2px solid #0088ff;
+         border-color: #0088ff transparent #0088ff transparent;
+         animation: ct-icon-loading 1.2s linear infinite;
+         }
+         @keyframes ct-icon-loading {
+         0% {
+         transform: rotate(0deg);
+         }
+         100% {
+         transform: rotate(360deg);
+         }
+         }
+         .ct-text-group {
+         margin-left: 15px;
+         }
+         .ct-text-group-heading {
+         margin-left: 25px;
+         }
+         .ct-heading {
+         font-size: 18px;
+         margin: 0px;
+         margin-bottom: 5px;
+         }
+         .ct-text {
+         font-size: 14px;
+         }
+         @media (max-width: 768px) {
+         .ct-row {
+         justify-content: flex-start;
+         flex-direction: column;
+         margin: 7px 0px;
+         }
+         .ct-group {
+         flex: none;
+         margin: 0px;
+         }
+         .ct-toast {
+         margin: 8px 15px;
+         width: initial;
+         }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="react-root react-root--auto">
+         <div class="popover streak-popover" data-sr-override="true" style="top: 57.1875px; left: 100px; opacity: 1;">
+            <div class="streak-popup" data-role="streak-popup">
+               <div class="streak-header">
+                  <h3 class="streak-header__daily-scores">Daily Goals (Subhra Sabnam Sahoo)<span><i class="icon-info streak-header__hover-icon"></i></span></h3>
+                  <div class="row"></div>
+               </div>
+               <div class="streak-accordion">
+                  <div class="streak-accordion-benefits">
+                     <div class="streak-accordion-benefits__trophy"><img src="https://assets.scaler.com/packs/images/trophy.cd0713.svg" alt="trophy"></div>
+                     <div class="streak-accordion-benefits__info">Build your streak to earn coins,  unlock exclusive rewards and more</div>
+                  </div>
+               </div>
+               <div class="streak-container">
+                  <div class="streak-container__cards">
+                     <div class="streak-total-streak">
+                        <h4>Total Streak</h4>
+                        <div class="streak-total-streak__container">
+                           <img src="https://assets.scaler.com/packs/images/fire.76cfb0.svg" alt="Streak Icon">
+                           <div class="streak-total-streak__text column">
+                              <h1 class="streak-total-streak__title">2</h1>
+                              <h4 class="streak-total-streak__subtitle">Day Streak</h4>
+                           </div>
+                        </div>
+                        <div class="streak-total-streak__rewards">
+                           <div class="streak-total-streak__reward">
+                              <img src="https://assets.scaler.com/packs/images/coin.f07521.svg" class="streak-total-streak__reward-icon" alt="icon">
+                              <div class="streak-total-streak__reward-container">
+                                 <div class="streak-total-streak__reward-details">
+                                    <div class="streak-total-streak__reward-title">10 Coin Reward in</div>
+                                 </div>
+                                 <div class="streak-total-streak__reward-target">10 Days</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="streak-daily-goal">
+                        <div class="streak-daily-goal__header">
+                           <h4 class="streak-daily-goal__header--title">Daily Goal</h4>
+                           <div>
+                              <h5 class="streak-daily-goal__header--timer">00:00:00</h5>
+                              <div class="streak-daily-goal__header--timezone">(GMT +05:30)</div>
+                           </div>
+                        </div>
+                        <svg height="170" width="170" class="streak-daily-goal__progress-circle">
+                           <circle class="progress-ring" cx="85" cy="85" fill="transparent" r="77" stroke="#eeeeee" stroke-dasharray="483.80526865282815 483.80526865282815" stroke-width="4"></circle>
+                           <circle class="progress-ring" cx="85" cy="85" fill="transparent" r="77" stroke="#77b662" stroke-dasharray="483.80526865282815 483.80526865282815" stroke-width="4" style="stroke-dashoffset: 0;"></circle>
+                        </svg>
+                        <div class="streak-daily-goal__container">
+                           <div class="streak-daily-goal__text"><span class="streak-daily-goal__text--achieved">0</span><span class="streak-daily-goal__text--target">/10</span></div>
+                           <div class="streak-daily-goal__subtitle">Points</div>
+                           <a href="/academy/mentee-dashboard/problems" class="streak-daily-goal__button">Achieve Points</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="streak-performance-graph">
+                     <h4>Your Performance</h4>
+                     <div class="streak-performance-graph__container">
+                        <div class="recharts-wrapper" style="position: relative; cursor: default; width: 470px; height: 160px;">
+                           <svg class="recharts-surface" width="470" height="160" viewBox="0 0 470 160" version="1.1">
+                              <defs>
+                                 <clipPath id="recharts3-clip">
+                                    <rect x="40" y="36" height="94" width="430"></rect>
+                                 </clipPath>
+                              </defs>
+                              <g class="recharts-cartesian-grid">
+                                 <g class="recharts-cartesian-grid-horizontal">
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="130" x2="470" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="83" x2="470" y2="83"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="36" x2="470" y2="36"></line>
+                                 </g>
+                                 <g class="recharts-cartesian-grid-vertical">
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="70" y1="36" x2="70" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="136.66666666666669" y1="36" x2="136.66666666666669" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="203.33333333333334" y1="36" x2="203.33333333333334" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="270" y1="36" x2="270" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="336.6666666666667" y1="36" x2="336.6666666666667" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="403.33333333333337" y1="36" x2="403.33333333333337" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="470" y1="36" x2="470" y2="130"></line>
+                                    <line stop-opacity="0.5" stroke="#c1c1c1" stroke-dasharray="2 1" stroke-width="1" fill="none" x="40" y="36" width="430" height="94" x1="40" y1="36" x2="40" y2="130"></line>
+                                 </g>
+                              </g>
+                              <g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis">
+                                 <line class="recharts-cartesian-axis-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="40" y1="130" x2="470" y2="130"></line>
+                                 <g class="recharts-cartesian-axis-ticks">
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="70" y1="140" x2="70" y2="130"></line>
+                                       <g transform="translate(70,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Thu</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="136.66666666666669" y1="140" x2="136.66666666666669" y2="130"></line>
+                                       <g transform="translate(136.66666666666669,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Fri</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="203.33333333333334" y1="140" x2="203.33333333333334" y2="130"></line>
+                                       <g transform="translate(203.33333333333334,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Sat</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="270" y1="140" x2="270" y2="130"></line>
+                                       <g transform="translate(270,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Sun</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="336.6666666666667" y1="140" x2="336.6666666666667" y2="130"></line>
+                                       <g transform="translate(336.6666666666667,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Mon</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="403.33333333333337" y1="140" x2="403.33333333333337" y2="130"></line>
+                                       <g transform="translate(403.33333333333337,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Tue</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="430" height="30" x="40" y="130" fill="none" x1="470" y1="140" x2="470" y2="130"></line>
+                                       <g transform="translate(455.1484375,142)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">Wed</text>
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                              <g class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis">
+                                 <line class="recharts-cartesian-axis-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="40" y1="36" x2="40" y2="130"></line>
+                                 <g class="recharts-cartesian-axis-ticks">
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="130" x2="40" y2="130"></line>
+                                       <g transform="translate(32,130)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">0</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="83" x2="40" y2="83"></line>
+                                       <g transform="translate(32,83)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">170</text>
+                                       </g>
+                                    </g>
+                                    <g class="recharts-layer recharts-cartesian-axis-tick">
+                                       <line class="recharts-cartesian-axis-tick-line" stroke="#c1c1c1" width="60" height="94" x="-20" y="36" fill="none" x1="34" y1="36" x2="40" y2="36"></line>
+                                       <g transform="translate(32,36)">
+                                          <text x="0" y="0" dy="10" text-anchor="end" fill="#515151" stroke-width="3" font-weight="700" font-size="10">340</text>
+                                       </g>
+                                    </g>
+                                 </g>
+                              </g>
+                              <g class="recharts-layer recharts-line">
+                                 <path stroke="#7533ff" stroke-width="3" fill="none" width="430" height="94" stroke-dasharray="430.32916259765625px 0px" class="recharts-curve recharts-line-curve" d="M70,74.70588235294117L136.66666666666669,67.79411764705883L203.33333333333334,74.70588235294117L270,47.05882352941177L336.6666666666667,74.70588235294117L403.33333333333337,60.882352941176464L470,40.147058823529406"></path>
+                              </g>
+                              <g class="recharts-layer recharts-line">
+                                 <path stroke="#ffbf1d" stroke-width="2" fill="none" width="430" height="94" stroke-dasharray="400px 0px" class="recharts-curve recharts-line-curve" d="M70,74.70588235294117L136.66666666666669,74.70588235294117L203.33333333333334,74.70588235294117L270,74.70588235294117L336.6666666666667,74.70588235294117L403.33333333333337,74.70588235294117L470,74.70588235294117"></path>
+                              </g>
+                           </svg>
+                           <div class="recharts-legend-wrapper" style="position: absolute; width: 490px; height: 36px; right: 0px; top: 0px;">
+                              <ul class="recharts-default-legend" style="padding: 0px; margin: 0px; text-align: right;">
+                                 <li class="recharts-legend-item legend-item-0" style="display: inline-block; margin-right: 10px;">
+                                    <svg class="recharts-surface" width="8" height="8" viewBox="0 0 32 32" version="1.1" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                       <path fill="#7533ff" class="recharts-symbols" transform="translate(16, 16)" d="M16,0A16,16,0,1,1,-16,0A16,16,0,1,1,16,0"></path>
+                                    </svg>
+                                    <span class="recharts-legend-item-text"><span class="streak-performance-graph__legend--text">Achieved Goal</span></span>
+                                 </li>
+                                 <li class="recharts-legend-item legend-item-1" style="display: inline-block; margin-right: 10px;">
+                                    <svg class="recharts-surface" width="8" height="8" viewBox="0 0 32 32" version="1.1" style="display: inline-block; vertical-align: middle; margin-right: 4px;">
+                                       <path fill="#ffbf1d" class="recharts-symbols" transform="translate(16, 16)" d="M16,0A16,16,0,1,1,-16,0A16,16,0,1,1,16,0"></path>
+                                    </svg>
+                                    <span class="recharts-legend-item-text"><span class="streak-performance-graph__legend--text">Daily Goal</span></span>
+                                 </li>
+                              </ul>
+                           </div>
+                           <div class="recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-bottom" style="pointer-events: none; visibility: hidden; position: absolute; top: 0px; transform: translate(213.333px, 71px);">
+                              <div class="streak-performance-graph__tooltip"><span class="streak-performance-graph__tooltip-header">Sat</span></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="streak-footer streak-footer--success">Your streak may increase after timer ends</div>
+            </div>
+         </div>
+      </div>
+      <span id="recharts_measurement_span" style="position: absolute; top: -20000px; left: 0px; padding: 0px; margin: 0px; border: none; white-space: pre;">Thu</span>
+   </body>
+</html>
