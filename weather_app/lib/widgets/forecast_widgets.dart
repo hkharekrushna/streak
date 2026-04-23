@@ -260,7 +260,7 @@ class _TempBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Normalise relative to a plausible range (0–40°C)
+    // Normalize relative to a plausible range (0–40°C)
     final low = (minTemp.clamp(0, 40) / 40).clamp(0.0, 1.0);
     final high = (maxTemp.clamp(0, 40) / 40).clamp(0.0, 1.0);
 

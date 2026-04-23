@@ -8,12 +8,12 @@ comprehensive weather information.
 
 | Feature | Detail |
 |---|---|
-| **Dynamic Gradients** | Background colour adapts to weather condition and day/night cycle |
+| **Dynamic Gradients** | Background color adapts to weather condition and day/night cycle |
 | **Animated Weather Icon** | Floating & pulsing emoji icon with glow effect |
 | **Weather Particles** | Rain drops, snowflakes, and cloud animations rendered in `CustomPainter` |
 | **Current Conditions** | Temperature, feels like, high/low, humidity, wind, UV index, visibility, pressure |
 | **Hourly Forecast** | Horizontally scrollable 12-hour forecast |
-| **7-Day Forecast** | Daily min/max with colour-coded temperature bar |
+| **7-Day Forecast** | Daily min/max with color-coded temperature bar |
 | **Sunrise / Sunset** | Visual indicator with formatted times |
 | **Pull to Refresh** | Smooth refresh with loading overlay |
 | **Glassmorphism Cards** | Semi-transparent frosted-glass detail cards |

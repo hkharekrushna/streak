@@ -40,7 +40,7 @@ void main() {
       for (final condition in WeatherCondition.values) {
         final colors = WeatherUtils.getGradientColors(condition, true);
         expect(colors.length, 3,
-            reason: 'Expected 3 gradient stops for $condition');
+            reason: 'Expected 3 gradient colors for $condition');
       }
       // Night gradient
       final nightColors =
